@@ -1,0 +1,39 @@
+.u-section-1 {background-image: url("images/02.jpg"); background-position: 50% 50%}
+.u-section-1 .u-sheet-1 {min-height: 1063px}
+.u-section-1 .u-image-1 {width: 376px; height: 376px; background-image: url("images/01.jpg"); background-position: 50% 50%; animation-duration: 1000ms; margin: 141px auto 0}
+.u-section-1 .u-text-1 {text-transform: uppercase; letter-spacing: 4px; font-size: 3rem; font-weight: 700; margin: 36px auto 0}
+.u-section-1 .u-line-1 {width: 912px; height: 3px; margin: 20px auto 0}
+.u-section-1 .u-text-2 {font-size: 1.125rem; font-weight: 700; width: 543px; margin: 20px auto 0}
+.u-section-1 .u-text-3 {font-size: 1.125rem; font-weight: 700; margin: 20px auto 0}
+.u-section-1 .u-line-2 {width: 912px; height: 3px; margin: 20px auto 0}
+.u-section-1 .u-btn-1 {background-image: none; border-style: none; animation-duration: 1000ms; font-size: 1.125rem; margin: 15px auto 0 187px; padding: 10px 81px 10px 80px}
+.u-section-1 .u-btn-2 {background-image: none; border-style: none; animation-duration: 1000ms; font-size: 1.125rem; margin: -48px 455px 0 auto; padding: 10px 81px 10px 80px}
+.u-section-1 .u-btn-3 {background-image: none; border-style: none; animation-duration: 1000ms; font-size: 1.125rem; margin: -48px 176px 60px auto; padding: 10px 81px 10px 80px} 
+
+@media (max-width: 1199px){ .u-section-1 .u-sheet-1 {min-height: 876px}
+.u-section-1 .u-btn-1 {margin-left: 92px}
+.u-section-1 .u-btn-2 {margin-right: 361px}
+.u-section-1 .u-btn-3 {margin-right: 92px} }
+
+@media (max-width: 991px){ .u-section-1 .u-sheet-1 {min-height: 671px}
+.u-section-1 .u-line-1 {width: 720px}
+.u-section-1 .u-line-2 {width: 720px}
+.u-section-1 .u-btn-1 {margin-left: 15px}
+.u-section-1 .u-btn-2 {margin-right: 252px}
+.u-section-1 .u-btn-3 {margin-right: 11px} }
+
+@media (max-width: 767px){ .u-section-1 .u-sheet-1 {min-height: 503px}
+.u-section-1 .u-text-1 {font-size: 1.875rem; width: auto; margin-top: 35px}
+.u-section-1 .u-line-1 {width: 540px; margin-top: 21px; margin-left: 0}
+.u-section-1 .u-text-2 {width: 540px}
+.u-section-1 .u-line-2 {width: 540px}
+.u-section-1 .u-btn-1 {margin-top: 21px; margin-left: auto}
+.u-section-1 .u-btn-2 {margin-top: 12px; margin-right: auto}
+.u-section-1 .u-btn-3 {margin-top: 16px; margin-right: auto; margin-bottom: 26px; padding: 9px 53px 11px 51px} }
+
+@media (max-width: 575px){ .u-section-1 .u-sheet-1 {min-height: 736px}
+.u-section-1 .u-image-1 {width: 320px; height: 320px; margin-top: 80px}
+.u-section-1 .u-text-1 {margin-top: 36px}
+.u-section-1 .u-line-1 {width: 340px; margin-top: 20px}
+.u-section-1 .u-text-2 {width: 340px; margin-left: 0; margin-right: 0}
+.u-section-1 .u-line-2 {width: 340px} }
