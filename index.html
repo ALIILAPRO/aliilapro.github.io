@@ -3,20 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="programmer, developer, aliilapro, coder">
-  <meta name="description" content="ALIILAPRO - DEVELOPER AND PROGRAMMER">
-  <title>ALIILAPRO - DEVELOPER AND PROGRAMMER</title>
+  <meta name="keywords" content="programmer, developer, aliilapro, coder, hacker">
+  <meta name="description" content="ALIILAPRO - Professional Developer & Programmer | C# | Python | Android | Telegram Bots">
+  <title>ALIILAPRO | Developer & Programmer</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/ALIILAPRO/aliilapro.github.io/master/images/01.jpg" type="image/jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Oxanium:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Oxanium:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #00ff41;
+      --primary-light: #a0ffb8;
       --secondary: #008f11;
-      --dark: #0d0208;
-      --light: #c8ffd4;
+      --dark: #0a0a0a;
+      --darker: #050505;
+      --light: #e0ffe7;
       --accent: #00d934;
-      --glow: 0 0 10px var(--primary), 0 0 20px rgba(0, 255, 65, 0.5);
+      --glow: 0 0 10px var(--primary), 0 0 20px rgba(0, 255, 65, 0.3);
     }
     
     * {
@@ -27,10 +30,43 @@
     
     body {
       font-family: 'Oxanium', sans-serif;
-      background-color: var(--dark);
+      background-color: var(--darker);
       color: var(--light);
       line-height: 1.6;
       overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+    
+    /* Matrix Rain Background */
+    .matrix-rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    
+    .matrix-column {
+      position: absolute;
+      top: 0;
+      width: 1.2rem;
+      height: 100%;
+      color: var(--primary);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1.2rem;
+      text-shadow: 0 0 5px var(--primary);
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      opacity: 0.7;
+      animation: rain linear infinite;
+    }
+    
+    @keyframes rain {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100vh); }
     }
     
     .container {
@@ -41,49 +77,87 @@
       justify-content: center;
       padding: 2rem;
       position: relative;
-      overflow: hidden;
+      z-index: 1;
+      backdrop-filter: blur(2px);
     }
     
-    .container::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: 
-        radial-gradient(circle at 20% 30%, rgba(0, 255, 65, 0.05) 0%, transparent 20%),
-        radial-gradient(circle at 80% 70%, rgba(0, 143, 17, 0.05) 0%, transparent 20%);
-      z-index: -1;
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
     }
     
     .profile-img {
-      width: 150px;
-      height: 150px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       border: 3px solid var(--primary);
       object-fit: cover;
       margin-bottom: 1.5rem;
       box-shadow: var(--glow);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .profile-img::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        to bottom right,
+        transparent,
+        transparent,
+        transparent,
+        var(--primary-light),
+        transparent,
+        transparent
+      );
+      transform: rotate(30deg);
+      opacity: 0;
+      transition: all 0.6s ease;
     }
     
     .profile-img:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 15px var(--primary), 0 0 30px rgba(0, 255, 65, 0.7);
+      box-shadow: 0 0 20px var(--primary), 0 0 40px rgba(0, 255, 65, 0.5);
+    }
+    
+    .profile-img:hover::before {
+      animation: shine 1.5s ease;
+    }
+    
+    @keyframes shine {
+      0% { opacity: 0; left: -50%; }
+      50% { opacity: 0.8; }
+      100% { opacity: 0; left: 150%; }
     }
     
     h1 {
       font-family: 'Share Tech Mono', monospace;
-      font-size: 3rem;
+      font-size: 3.2rem;
       color: var(--primary);
       margin-bottom: 0.5rem;
-      text-shadow: 0 0 5px var(--primary);
-      letter-spacing: 2px;
+      text-shadow: var(--glow);
+      letter-spacing: 3px;
+      font-weight: 400;
+      position: relative;
+      padding: 0 1rem;
+    }
+    
+    h1::before, h1::after {
+      content: '//';
+      color: var(--secondary);
+      margin: 0 0.5rem;
+      opacity: 0.7;
     }
     
     .divider {
-      width: 200px;
+      width: 240px;
       height: 2px;
       background: linear-gradient(90deg, transparent, var(--primary), transparent);
       margin: 1.5rem 0;
@@ -94,12 +168,13 @@
     .divider::after {
       content: "";
       position: absolute;
-      width: 10px;
-      height: 10px;
+      width: 12px;
+      height: 12px;
       background-color: var(--primary);
       border-radius: 50%;
       top: 50%;
       transform: translateY(-50%);
+      box-shadow: var(--glow);
     }
     
     .divider::before {
@@ -117,32 +192,39 @@
       gap: 2rem;
       margin: 2rem 0;
       text-align: center;
+      max-width: 800px;
     }
     
     .skill-card {
-      background: rgba(13, 2, 8, 0.7);
+      background: rgba(10, 10, 10, 0.7);
       border: 1px solid var(--secondary);
-      border-radius: 8px;
-      padding: 1.5rem;
-      width: 200px;
-      transition: all 0.3s ease;
+      border-radius: 12px;
+      padding: 1.8rem;
+      width: 220px;
+      transition: all 0.4s ease;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
     
     .skill-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
       border-color: var(--primary);
-      box-shadow: var(--glow);
+      box-shadow: 0 8px 25px rgba(0, 255, 65, 0.2);
     }
     
     .skill-card h3 {
       color: var(--primary);
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 1px;
     }
     
     .skill-card p {
       font-family: 'Share Tech Mono', monospace;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      color: var(--light);
+      line-height: 1.8;
     }
     
     .buttons {
@@ -154,26 +236,30 @@
     }
     
     .btn {
-      display: inline-block;
-      padding: 0.8rem 1.8rem;
-      background-color: transparent;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-      border-radius: 4px;
-      font-family: 'Share Tech Mono', monospace;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2.2rem;
+      background-color: rgba(0, 143, 17, 0.15);
+      color: var(--primary-light);
+      border: 1px solid var(--primary);
+      border-radius: 8px;
+      font-family: 'Oxanium', sans-serif;
       text-decoration: none;
       font-weight: 600;
-      text-transform: uppercase;
       letter-spacing: 1px;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      min-width: 180px;
     }
     
     .btn:hover {
-      background-color: rgba(0, 255, 65, 0.1);
-      box-shadow: var(--glow);
-      transform: translateY(-2px);
+      background-color: rgba(0, 255, 65, 0.2);
+      box-shadow: 0 6px 20px rgba(0, 255, 65, 0.3);
+      transform: translateY(-3px);
+      color: white;
     }
     
     .btn::before {
@@ -183,7 +269,12 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.2), transparent);
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 65, 0.2),
+        transparent
+      );
       transition: 0.5s;
     }
     
@@ -191,23 +282,12 @@
       left: 100%;
     }
     
-    .scanline {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 10px;
-      background: rgba(0, 255, 65, 0.1);
-      z-index: 100;
-      animation: scan 8s linear infinite;
-      pointer-events: none;
+    .btn i {
+      margin-right: 8px;
+      font-size: 1.2rem;
     }
     
-    @keyframes scan {
-      0% { top: -10px; }
-      100% { top: 100%; }
-    }
-    
+    /* Glitch effect */
     .glitch {
       position: relative;
     }
@@ -244,9 +324,15 @@
       100% { transform: translate(0); }
     }
     
+    /* Responsive design */
     @media (max-width: 768px) {
       h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+      }
+      
+      .profile-img {
+        width: 180px;
+        height: 180px;
       }
       
       .skills {
@@ -256,7 +342,7 @@
       
       .skill-card {
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
       }
       
       .buttons {
@@ -270,36 +356,72 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <div class="scanline"></div>
+  <!-- Matrix Rain Background -->
+  <div class="matrix-rain" id="matrixRain"></div>
   
   <div class="container">
-    <img src="https://raw.githubusercontent.com/ALIILAPRO/aliilapro.github.io/refs/heads/master/images/01.jpg" alt="ALIILAPRO" class="profile-img">
-    
-    <h1 class="glitch" data-text="ALIILAPRO">ALIILAPRO</h1>
-    
-    <div class="divider"></div>
+    <div class="profile-section">
+      <img src="https://raw.githubusercontent.com/ALIILAPRO/aliilapro.github.io/master/images/01.jpg" alt="ALIILAPRO" class="profile-img">
+      
+      <h1 class="glitch" data-text="ALIILAPRO">ALIILAPRO</h1>
+      
+      <div class="divider"></div>
+    </div>
     
     <div class="skills">
       <div class="skill-card">
-        <h3>PROGRAMMER</h3>
-        <p>Csharp - VB - PHP - Python</p>
+        <h3><i class="fas fa-code"></i> PROGRAMMER</h3>
+        <p>C# • VB • PHP • Python</p>
       </div>
       
       <div class="skill-card">
-        <h3>DEVELOPER</h3>
-        <p>Android - Robot Telegram</p>
+        <h3><i class="fas fa-laptop-code"></i> DEVELOPER</h3>
+        <p>Android • Telegram Bots</p>
       </div>
     </div>
     
     <div class="divider"></div>
     
     <div class="buttons">
-      <a href="https://t.me/aliilapro" class="btn" target="_blank">Telegram</a>
-      <a href="https://aliilapro.github.io/blog" class="btn" target="_blank">Blog</a>
-      <a href="https://github.com/ALIILAPRO" class="btn" target="_blank">Github</a>
+      <a href="https://t.me/aliilapro" class="btn" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+      <a href="https://aliilapro.github.io/blog" class="btn" target="_blank"><i class="fas fa-blog"></i> Blog</a>
+      <a href="https://github.com/ALIILAPRO" class="btn" target="_blank"><i class="fab fa-github"></i> Github</a>
     </div>
   </div>
+
+  <script>
+    // Create matrix rain
+    document.addEventListener('DOMContentLoaded', function() {
+      const matrixRain = document.getElementById('matrixRain');
+      const chars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
+      
+      // Create columns
+      const columnCount = Math.floor(window.innerWidth / 20);
+      
+      for (let i = 0; i < columnCount; i++) {
+        const column = document.createElement('div');
+        column.className = 'matrix-column';
+        
+        // Random content
+        let content = '';
+        const length = Math.floor(Math.random() * 30) + 20;
+        for (let j = 0; j < length; j++) {
+          content += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        
+        column.textContent = content;
+        
+        // Random positioning and animation
+        column.style.left = `${(i * 20) + Math.random() * 10}px`;
+        column.style.animationDuration = `${Math.random() * 3 + 5}s`;
+        column.style.animationDelay = `${Math.random() * 5}s`;
+        
+        matrixRain.appendChild(column);
+      }
+    });
+  </script>
 </body>
 </html>
